@@ -1,0 +1,38 @@
+﻿Build started 08.03.2016 7:45:16.
+     1>Project "C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl5\OpenGL\OpenGL\OpenGL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt dirLight.cpp flyingCamera.cpp objModel.cpp openGLControl.cpp pointLight.cpp renderScene.cpp shaders.cpp skybox.cpp spotLight.cpp static_geometry.cpp texture.cpp vertexBufferObject.cpp win_OpenGLApp.cpp
+         win_OpenGLApp.cpp
+         vertexBufferObject.cpp
+         texture.cpp
+         static_geometry.cpp
+         spotLight.cpp
+         skybox.cpp
+         shaders.cpp
+         renderScene.cpp
+         pointLight.cpp
+         openGLControl.cpp
+         objModel.cpp
+         flyingCamera.cpp
+         dirLight.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl5\OpenGL\Debug\OpenGL.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl5\OpenGL\Debug\OpenGL.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl5\OpenGL\Debug\OpenGL.lib" /MACHINE:X86 Debug\dirLight.obj
+         Debug\flyingCamera.obj
+         Debug\objModel.obj
+         Debug\openGLControl.obj
+         Debug\pointLight.obj
+         Debug\renderScene.obj
+         Debug\shaders.obj
+         Debug\skybox.obj
+         Debug\spotLight.obj
+         Debug\static_geometry.obj
+         Debug\texture.obj
+         Debug\vertexBufferObject.obj
+         Debug\win_OpenGLApp.obj
+         OpenGL.vcxproj -> C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl5\OpenGL\Debug\OpenGL.exe
+     1>Done Building Project "C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl5\OpenGL\OpenGL\OpenGL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:01:00.84

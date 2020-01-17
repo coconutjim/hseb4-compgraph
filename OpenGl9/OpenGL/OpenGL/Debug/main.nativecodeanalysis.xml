@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DEFECTS><DEFECT><SFA><FILEPATH>c:\users\lev\dropbox\study_materials_4\compgraph\opengl9\opengl\opengl\</FILEPATH><FILENAME>main.cpp</FILENAME><LINE>469</LINE><COLUMN>11</COLUMN></SFA><DEFECTCODE>28251</DEFECTCODE><DESCRIPTION>Inconsistent annotation for 'WinMain': this instance has no annotations. See c:\program files (x86)\windows kits\8.1\include\um\winbase.h(905). </DESCRIPTION><FUNCTION>WinMain</FUNCTION><DECORATED>WinMain@16</DECORATED><FUNCLINE>469</FUNCLINE><PATH/></DEFECT></DEFECTS>

@@ -1,0 +1,46 @@
+﻿Build started 20.03.2016 8:55:21.
+     1>Project "C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl6\OpenGL\OpenGL\OpenGL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt dirLight.cpp flyingCamera.cpp framebuffer.cpp objModel.cpp openGLControl.cpp pointLight.cpp renderScene.cpp shaders.cpp skybox.cpp spotLight.cpp static_geometry.cpp texture.cpp vertexBufferObject.cpp win_OpenGLApp.cpp
+         win_OpenGLApp.cpp
+         vertexBufferObject.cpp
+         texture.cpp
+     1>c:\users\lev\dropbox\study_materials_4\compgraph\opengl6\opengl\opengl\texture.cpp(295): warning C4316: 'glm::tvec4<float,0>' : object allocated on the heap may not be aligned 16
+         static_geometry.cpp
+         spotLight.cpp
+         skybox.cpp
+         shaders.cpp
+         renderScene.cpp
+     1>c:\users\lev\dropbox\study_materials_4\compgraph\opengl6\opengl\opengl\renderscene.cpp(124): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\lev\dropbox\study_materials_4\compgraph\opengl6\opengl\opengl\renderscene.cpp(127): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\lev\dropbox\study_materials_4\compgraph\opengl6\opengl\opengl\renderscene.cpp(128): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\lev\dropbox\study_materials_4\compgraph\opengl6\opengl\opengl\renderscene.cpp(129): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+         pointLight.cpp
+         openGLControl.cpp
+         objModel.cpp
+         framebuffer.cpp
+         flyingCamera.cpp
+         dirLight.cpp
+         Generating Code...
+     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl6\OpenGL\Debug\OpenGL.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl6\OpenGL\Debug\OpenGL.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl6\OpenGL\Debug\OpenGL.lib" /MACHINE:X86 Debug\dirLight.obj
+         Debug\flyingCamera.obj
+         Debug\framebuffer.obj
+         Debug\objModel.obj
+         Debug\openGLControl.obj
+         Debug\pointLight.obj
+         Debug\renderScene.obj
+         Debug\shaders.obj
+         Debug\skybox.obj
+         Debug\spotLight.obj
+         Debug\static_geometry.obj
+         Debug\texture.obj
+         Debug\vertexBufferObject.obj
+         Debug\win_OpenGLApp.obj
+         OpenGL.vcxproj -> C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl6\OpenGL\Debug\OpenGL.exe
+     1>Done Building Project "C:\Users\Lev\Dropbox\Study_Materials_4\compgraph\OpenGl6\OpenGL\OpenGL\OpenGL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:48.65

@@ -1,0 +1,68 @@
+/*
+Осипов Лев Игоревич
+OpenGL. Проект 16-2.
+Visual Studio 2013
+23.03.2016
+Сделано:
+1) Дом и три Дедпула по мешам, скайбокс, три источника освещения (видны на доме)
+2) Фотокуб с различными картинками на всех гранях, картинки перетекают в другие (и обратно)
+Перетекание осуществляется в двух режимах - автоматическом и ручном (по умолчанию автоматический)
+Переключение режима перетекания - клавиша f, управление в ручном режиме - клавиши q и e
+3) Три Дедпула реализованы по-разному:
+	1. Первый Дедпул - просто Дедпул.
+	2. Второй Дедпул реализован с отблесками (как будто сделан из металла).
+		Реализовано управление отблесками: стрелки влево и вправо - площадь отблесков, стрелки вниз и вверх - "сила" отблесков
+	3. Третий Дедпул - это просто Дедпул с деревянной текстурой (подключил в mtl другую картинку)
+Код закомментирован.
+*/
+#pragma once
+
+enum ETextureFiltering
+{
+	TEXTURE_FILTER_MAG_NEAREST = 0, // Nearest criterion for magnification
+	TEXTURE_FILTER_MAG_BILINEAR, // Bilinear criterion for magnification
+	TEXTURE_FILTER_MIN_NEAREST, // Nearest criterion for minification
+	TEXTURE_FILTER_MIN_BILINEAR, // Bilinear criterion for minification
+	TEXTURE_FILTER_MIN_NEAREST_MIPMAP, // Nearest criterion for minification, but on closest mipmap
+	TEXTURE_FILTER_MIN_BILINEAR_MIPMAP, // Bilinear criterion for minification, but on closest mipmap
+	TEXTURE_FILTER_MIN_TRILINEAR, // Bilinear criterion for minification on two closest mipmaps, then averaged
+};
+
+// Wraps OpenGL texture object and performs their loading.
+class CTexture
+{
+public:
+	void CreateEmptyTexture(int a_iWidth, int a_iHeight, GLenum format);
+	void CreateFromData(BYTE* bData, int a_iWidth, int a_iHeight, int a_iBPP, GLenum format, bool bGenerateMipMaps = false);
+	
+	bool LoadTexture2D(string a_sPath, bool bGenerateMipMaps = false);
+	void BindTexture(int iTextureUnit = 0);
+
+	void SetFiltering(int a_tfMagnification, int a_tfMinification);
+
+	void SetSamplerParameter(GLenum parameter, GLenum value);
+
+	int GetMinificationFilter();
+	int GetMagnificationFilter();
+
+	int GetWidth();
+	int GetHeight();
+	int GetBPP();
+
+	UINT GetTextureID();
+
+	void DeleteTexture();
+
+	CTexture();
+private:
+
+	int iWidth, iHeight, iBPP; // Texture width, height, and bytes per pixel
+	UINT uiTexture; // Texture name
+	UINT uiSampler; // Sampler name
+	bool bMipMapsGenerated;
+
+	int tfMinification, tfMagnification;
+
+	string sPath;
+};
+

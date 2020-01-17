@@ -1,0 +1,12 @@
+c:\users\lev\dropbox\study_materials_4\compgraph\opengl9\opengl\opengl\opengl.cpp:OpenGLPrintDebugInfo:56 DEBUG OpenGL render context information:
+  Renderer       : GeForce 840M/PCIe/SSE2
+  Vendor         : NVIDIA Corporation
+  Version        : 3.3.0 NVIDIA 358.50
+  GLSL version   : 3.30 NVIDIA via Cg compiler
+  OpenGL version : 3.3
+c:\users\lev\dropbox\study_materials_4\compgraph\opengl9\opengl\opengl\opengl.cpp:OpenGLPrintDebugInfo:59 DEBUG GL_MAX_VERTEX_ATTRIBS = 16
+c:\users\lev\dropbox\study_materials_4\compgraph\opengl9\opengl\opengl\opengl.cpp:OpenGLPrintDebugInfo:60 DEBUG GL_MAX_VERTEX_UNIFORM_COMPONENTS = 4096
+c:\users\lev\dropbox\study_materials_4\compgraph\opengl9\opengl\opengl\opengl.cpp:OpenGLPrintDebugInfo:61 DEBUG GL_MAX_TEXTURE_IMAGE_UNITS = 32
+c:\users\lev\dropbox\study_materials_4\compgraph\opengl9\opengl\opengl\opengl.cpp:OpenGLPrintDebugInfo:62 DEBUG GL_MAX_COLOR_ATTACHMENTS = 8
+c:\users\lev\dropbox\study_materials_4\compgraph\opengl9\opengl\opengl\opengl.cpp:OpenGLPrintDebugInfo:63 DEBUG GL_MIN_PROGRAM_TEXEL_OFFSET = -8
+c:\users\lev\dropbox\study_materials_4\compgraph\opengl9\opengl\opengl\opengl.cpp:OpenGLPrintDebugInfo:64 DEBUG GL_MAX_PROGRAM_TEXEL_OFFSET = 7

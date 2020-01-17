@@ -1,0 +1,5 @@
+# 3ds Max Wavefront OBJ Exporter
+# 
+
+newmtl Material__27
+	map_Ka wood.jpg

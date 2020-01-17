@@ -1,0 +1,111 @@
+void FiguForm::drawFigure(array<double, 2>^ matrixVert, array<double, 2>^ matrixVertTexture, array<int, 2>^ matrixFace, Color^ color) {
+	// Through all faces
+	for (int i = 0; i < matrixFace->GetLength(0); ++i) {
+		// Defining color for this vertex
+		Color^ currColor = defineColorForFace(i, matrixVert, matrixFace, color);
+		// Getting vertexes
+		int p1 = matrixFace[i, 0];
+		int p2 = matrixFace[i, 1];
+		int p3 = matrixFace[i, 2];
+		double x1 = matrixVert[p1, 0], xt1 = matrixVertTexture[p1, 0] * bitmapTexture->Width;
+		double y1 = matrixVert[p1, 1], yt1 = matrixVertTexture[p1, 1] * bitmapTexture->Height;
+		double z1 = matrixVert[p1, 2];
+		double x2 = matrixVert[p2, 0], xt2 = matrixVertTexture[p2, 0] * bitmapTexture->Width;
+		double y2 = matrixVert[p2, 1], yt2 = matrixVertTexture[p2, 1] * bitmapTexture->Height;
+		double z2 = matrixVert[p2, 2];
+		double x3 = matrixVert[p3, 0], xt3 = matrixVertTexture[p3, 0] * bitmapTexture->Width;
+		double y3 = matrixVert[p3, 1], yt3 = matrixVertTexture[p3, 1] * bitmapTexture->Height;
+		double z3 = matrixVert[p3, 2];
+		// changing points to fit it to the triangle ABC (like triangle in the presentation)
+		changePointLocation(x1, y1, z1, x2, y2, z2, x3, y3, z3, xt1, yt1, xt2, yt2, xt3, yt3);
+		// if first half exists
+		if (y2 != y1 && yt2 != yt1) {
+			// first half
+			double iterations = (y1 - y2) / 0.5;
+			double step = (yt1 - yt2) / iterations;
+			for (double yy1 = y2, yyt1 = yt2; yy1 <= y1; yy1+=0.5, yyt1+=step) {
+				if (yy1 < 0 || yy1 >= zBuffer->GetLength(1)) {
+					continue;
+				}
+				if (yyt1 < 0 || yyt1 >= bitmapTexture->Height) {
+					continue;
+				}
+				double xq = x2 + (x1 - x2) * (yy1 - y2) / (y1 - y2), xtq = xt2 + (xt1 - xt2) * (yyt1 - yt2) / (yt1 - yt2);
+				double xr = x2 + (x3 - x2) * (yy1 - y2) / (y3 - y2), xtr = xt2 + (xt3 - xt2) * (yyt1 - yt2) / (yt3 - yt2);
+				double zq = z2 + (z1 - z2) * (yy1 - y2) / (y1 - y2);
+				double zr = z2 + (z3 - z2) * (yy1 - y2) / (y3 - y2);
+				// checking what is righter
+				if (xq > xr) {
+					swap(xq, xr);
+					swap(xtq, xtr);
+				}
+				double iterations1 = (xr - xq) / 0.5;
+				double step1 = (xtr - xtq) / iterations;
+				for (double xx1 = xq, xxt1 = xtq; xx1 < xr; xx1+=0.5, xxt1+=0.3) {
+					if (xx1 < 0 || xx1 >= zBuffer->GetLength(0)) {
+						continue;
+					}
+					if (xxt1 < 0 || xxt1 >= bitmapTexture->Width) {
+						continue;
+					}
+					// finding z-point
+					double zp = zq + (zr - zq) * (xx1 - xq) / (xr - xq);
+					int xxx = (int)xx1, xxxt = (int)xxt1;
+					int yyy = (int)yy1, yyyt = (int)yyt1;
+					// check if we can see it
+					if (zp < zBuffer[xxx, yyy]) {
+						// Updating buffer
+						zBuffer[xxx, yyy] = zp;
+						// Filling bitmap
+						bitmapFigu->SetPixel(xxx, yyy, bitmapTexture->GetPixel(xxxt, yyyt));
+					}
+				}
+			}
+		}
+		// if second half exists
+		if (y3 == y1 || yt3 == yt1) {
+			continue;
+		}
+		// second half
+		double iterations = (y3 - y1) / 0.5;
+		double step = (yt3 - yt1) / iterations;
+		for (double yy2 = y3, yyt2 = yt3; yy2 > y1; yy2-=0.5, yyt2-=0.3) {
+			if (yy2 < 0 || yy2 >= zBuffer->GetLength(1)) {
+				continue;
+			}
+			if (yyt2 < 0 || yyt2 >= bitmapTexture->Height) {
+				continue;
+			}
+			double xq = x3 + (x1 - x3) * (yy2 - y3) / (y1 - y3), xtq = xt3 + (xt1 - xt3) * (yyt2 - yt3) / (yt1 - yt3);
+			double xr = x3 + (x2 - x3) * (yy2 - y3) / (y2 - y3), xtr = xt3 + (xt2 - xt3) * (yyt2 - yt3) / (yt2 - yt3);
+			double zq = z3 + (z1 - z3) * (yy2 - y3) / (y1 - y3);
+			double zr = z3 + (z2 - z3) * (yy2 - y3) / (y2 - y3);
+			// checking what is righter
+			if (xq > xr) {
+				swap(xq, xr);
+				swap(xtq, xtr);
+			}
+			double iterations1 = (xr - xq) / 0.5;
+			double step1 = (xtr - xtq) / iterations;
+			for (double xx2 = xq, xxt2 = xtq; xx2 < xr; xx2+=0.5, xxt2+=0.3) {
+				if (xx2 < 0 || xx2 >= zBuffer->GetLength(0)) {
+					continue;
+				}
+				if (xxt2 < 0 || xxt2 >= bitmapTexture->Width) {
+					continue;
+				}
+				// finding z-point
+				double zp = zq + (zr - zq) * (xx2 - xq) / (xr - xq);
+				int xxx = (int)xx2, xxxt = (int)xxt2;
+				int yyy = (int)yy2, yyyt = (int)yyt2;
+				// check if we can see it
+				if (zp < zBuffer[xxx, yyy]) {
+					// Updating buffer
+					zBuffer[xxx, yyy] = zp;
+					// Filling bitmap
+					bitmapFigu->SetPixel(xxx, yyy, bitmapTexture->GetPixel(xxxt, yyyt));
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DEFECTS><DEFECT><SFA><FILEPATH>c:\users\lev\dropbox\study_materials_4\compgraph\opengl9\opengl\opengl\</FILEPATH><FILENAME>mesh.cpp</FILENAME><LINE>107</LINE><COLUMN>5</COLUMN></SFA><DEFECTCODE>6262</DEFECTCODE><DESCRIPTION>Function uses '29204' bytes of stack:  exceeds /analyze:stacksize '16384'.  Consider moving some data to heap.</DESCRIPTION><FUNCTION>MeshCreateTorus</FUNCTION><DECORATED>?MeshCreateTorus@@YAXAAUMesh@@ABUvec3@@M@Z</DECORATED><FUNCLINE>107</FUNCLINE><PATH/></DEFECT></DEFECTS>
