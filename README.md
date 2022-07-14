@@ -5,9 +5,9 @@
 2. Filling algorithms
 3. Spline construction
 4. Pyramid construction
-6. Roberts algorithm
-7. Z-buffering
-8. Textures
-9. OpenGL, Direct3D. Rendering, shaders, textures, light sources, skybox, particle systems.
+5. Roberts algorithm
+6. Z-buffering
+7. Textures
+8. OpenGL, Direct3D. Rendering, shaders, textures, light sources, skybox, particle systems.
 ## Technology
 C++, Graphics, OpenGL, Direct3D
