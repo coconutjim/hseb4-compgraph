@@ -4,7 +4,7 @@
 1. Bresenham's line algorithm
 2. Filling algorithms
 3. Spline construction
-4-5. Pyramid construction
+4. Pyramid construction
 6. Roberts algorithm
 7. Z-buffering
 8. Textures
